@@ -1,0 +1,17 @@
+<h1>Listing</h1>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Content</th>
+	</tr>
+	
+		<% @post.each do |f| %>
+		<tr>
+		<td><%= f.title %></td>
+		<td><%= f.content %></td>
+		<td><%= link_to 'Edit', edit_path(f) %></td>
+		<td><%= link_to 'Delete', delete_post_path(f),method: 'delete' %></td>
+	</tr>
+	<% end %>
+</table>
+<td><%= link_to 'new', posts_new_path %></td>
